@@ -19,8 +19,8 @@ const CalendarSummary: React.FunctionComponent = () => {
 
   useEffect(() => {
     async function fetchSummary(fromDay: Date, daysCount: number) {
-      const eventsMap = await fetchCalendarSummary(fromDay, daysCount);
-      setDailySummaries(eventsMap);
+      const summaries = await fetchCalendarSummary(fromDay, daysCount);
+      setDailySummaries(summaries);
     }
 
     fetchSummary(new Date(), 7);
